@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanksgiving Message</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              'gradient-bg': 'gradientBG 15s ease infinite',
+              'pulse-slow': 'pulse 2s infinite',
+              'twinkle': 'twinkle 1.5s infinite',
+              'heart-beat': 'heartBeat 1.5s ease infinite',
+            },
+            keyframes: {
+              gradientBG: {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              },
+              twinkle: {
+                '0%, 100%': { opacity: '0', transform: 'scale(0.5)' },
+                '50%': { opacity: '1', transform: 'scale(1)' },
+              },
+              heartBeat: {
+                '0%, 100%': { transform: 'scale(1)' },
+                '15%': { transform: 'scale(1.2)' },
+                '30%': { transform: 'scale(1)' },
+                '45%': { transform: 'scale(1.15)' },
+                '60%': { transform: 'scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Utilities not fully covered by Tailwind v3 default CDN */
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      /* Custom scrollbar for the card back */
+      .card-back-content::-webkit-scrollbar {
+        width: 6px;
+      }
+      .card-back-content::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .card-back-content::-webkit-scrollbar-thumb {
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 10px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
